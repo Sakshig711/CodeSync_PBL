@@ -1,10 +1,10 @@
 Folder setup : 
 
-client -> client.js
+1) client -> (client.js 
           EditorPage.html
           LoginPage.html
-          index.css
-server.js
+          index.css)
+2) server.js
 
 Further, terminal commands,
   npm init -y
