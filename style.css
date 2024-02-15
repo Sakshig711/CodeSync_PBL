@@ -10,7 +10,8 @@ body{
 
 }
 .sak{
-  
+  width: 50%;
+  float: left;
 }
 .image-container {
             position: relative;
@@ -131,8 +132,8 @@ body{
             border-radius: 5px;
             background-color: #1c6bd2;
             transition: background-color 0.3s, color 0.3s;
-        margin-top: 10px;
-        margin-left: 140px;
+            margin-top: 10px;
+            margin-left: 140px;
             border-radius: 15px ;
             font-family:'montserrat';
 
@@ -149,14 +150,14 @@ body{
         
         .top-right-links {
             position: fixed;
-            top: 10px; /* Adjust top position as needed */
-            right: 100px; /* Adjust right position as needed */
+            top: 25px; 
+            right: 120px; 
         }
         
         .top-right-links a {
             color: #000000;
             text-decoration: none;
-            margin-left: 30px; /* Add space between links */
+            margin-left: 30px; 
             font-weight: bold;
         }
         
@@ -164,8 +165,17 @@ body{
             color: #555;
         }
 
-        .img{
-         max-width: 500px;
-         
-        }
+        .image {
+          float: right; /* Align to the right side */
+          width: 30%; /* Adjust the width as needed */
+          margin-top: 100px;
+          margin-right: 290px;
+      }
+      
+      .image img {
+          width: 760px; /* Set the width of the image to 100 pixels */
+          height: 540px; /* Maintain aspect ratio */
+          border-radius: 10px;
+      }
+      
 
