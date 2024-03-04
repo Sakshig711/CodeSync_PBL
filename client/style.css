@@ -1,4 +1,3 @@
-<<<<<<< HEAD:client/style.css
 #code-editor {
   width: 70%; /* Adjust the width as needed */
   height: 200px;
@@ -31,42 +30,6 @@
   font-size:23px;
 }
 
-=======
-#textBox {
-    width: 70%; /* Adjust the width as needed */
-    height: 200px;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    display: block;
-    resize: none; 
-  }
-
-  #outputContainer {
-    width: 70%; /* Adjust the width as needed */
-    height: 200px;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none; 
-  }
-
-
-#copyButton {
-    font-size:30px;                                              
-}
-
-#outputContainer {
-    font-size:23px;
-}
-
-/* main */
-
->>>>>>> 071d213919198151b3cc2249d07fee7adde3669b:client/index.css
 
 @import url('https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
@@ -78,11 +41,8 @@ body{
           background-position: center center;
 
 }
-<<<<<<< HEAD:client/style.css
 
 
-=======
->>>>>>> 071d213919198151b3cc2249d07fee7adde3669b:client/index.css
 .sak{
 width: 50%;
 float: left;
@@ -247,16 +207,11 @@ float: left;
     }
     
     .image img {
-<<<<<<< HEAD:client/style.css
         width: 760px; /* Set the width of the image to 100 pixels */
-=======
-        width: 730px; /* Set the width of the image to 100 pixels */
->>>>>>> 071d213919198151b3cc2249d07fee7adde3669b:client/index.css
         height: 540px; /* Maintain aspect ratio */
         border-radius: 10px;
     }
 
-<<<<<<< HEAD:client/style.css
     .popup {
       display: none;
       position: fixed;
@@ -349,151 +304,67 @@ float: left;
     align-items: center;
     cursor: pointer;
     transition: box-shadow .5s ease;
-    /* border: 1px solid black; */
     border-radius: 5px;
-    /* background-color: black; */
   }
 
   .item-icon{
     max-width: 100px;
   }
-    
-  .popup {
-    display: none; 
-    position: fixed;
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    padding-top: 60px; 
-  }
-  
-  .popup-content {
-    background-color: #fefefe;
-    padding: 20px;
-    border: 1px solid #404040;
-    width: 35%;
-  }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    margin-bottom: 10px;
-  }
-  
-  input[type="text"] {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  a {
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  
-  button {
-    padding: 10px;
-    background-color: #1c6bd2;
-    color: white;
-    border:#333;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #469cff;
-  }
-  
-=======
-    .wrapper{
-      padding: 50px 0;
-      background-color: #f6f8fa;
-    }
 
-    .section, .section-full-width {
-      margin: 0 auto;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+.popup-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #818181;
+  width: 30%;
+}
 
-    .content {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 2fr 2fr 2fr;
-      grid-gap: 15px;
-      gap: 15px;
-    }
+.close {
+  color: #f8f8f8;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
 
-    .item {
-      padding: 40px;
-      margin-top: 70px;
-      margin-left: 55px;
-      margin-right: 55px;
-      background-color: #fff;
-      
-    }
-    .heading {
-      padding: 0;
-      font-size: 24px;
-      line-height: 32px;
-      margin: 0 0 20px;
-      color: #333;
-    }
-    .item-desc {
-      color: #333;
-      font-weight: 300;
-      font-size: 17px;
-    }
+.close:hover,
+.close:focus {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  cursor: pointer;
+}
 
-    .lang-wrapper {
-      margin-top: 0px;
-      padding: 40px 0;
-      background-color: #fff;
-    }
+form {
+  display: flex;
+  flex-direction: column;
+}
 
-    .lang-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+label {
+  margin-bottom: 10px;
+}
 
-    .lang-item {
-      min-width: 200px;
-      max-width: 285px;
-      flex-basis: auto;
-      flex-grow: 1;
-      padding: 25px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
-      transition: box-shadow .5s ease;
-      /* border: 1px solid black; */
-      border-radius: 5px;
-      /* background-color: black; */
-    }
+input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #585858;
+  border-radius: 5px;
+}
 
-    .item-icon{
-      max-width: 100px;
-    }
->>>>>>> 071d213919198151b3cc2249d07fee7adde3669b:client/index.css
+a {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+button {
+  padding: 10px;
+  background-color: #1c6bd2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #139dff;
+}
+
+
+  
