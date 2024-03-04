@@ -1,52 +1,48 @@
 document.addEventListener("DOMContentLoaded", function () {
   const socket = io();
-  const textBox = document.getElementById("textBox");
   const copyButton = document.getElementById("copyButton");
   const outputContainer = document.getElementById("outputContainer");
   const participantsList = document.getElementById("participantsList");
   const languageDropdown = document.getElementById("languageDropdown");
-  let languageId = languageDropdown.value;
-  
-  
-  const roomId = window.location.pathname.substring(1);
-  
-  const codeEditor = CodeMirror.fromTextArea(textBox, {
-    lineNumbers: true,
-    mode: "javascript",  
-  });
-  
-  socket.emit("joinRoom", roomId);
-  
-  codeEditor.on("change", (instance, changeObj) => {
-    if (changeObj.origin !== "setValue" && changeObj.origin !== "socket") {
-      const newText = codeEditor.getValue();
-      socket.emit("textUpdate", newText);
-    }
-  });
-  
-  socket.on("textUpdate", ({ id, text }) => {
-    if (socket.id !== id) {
-      const cursor = codeEditor.getCursor();
-      const scrollInfo = codeEditor.getScrollInfo();
-      codeEditor.setValue(text);
-      codeEditor.setCursor(cursor);
-      codeEditor.scrollTo(scrollInfo.left, scrollInfo.top);
-    }
-  });
+
+  const codeEditor = document.getElementById("code-editor");
+  let languageId;
+
+  const userName = prompt("Enter your name:");
+  const roomId = window.location.pathname.substring(1);  // assuming room ID is part of the URL path
+
+  socket.emit("joinRoom", roomId, userName);
 
   socket.on("updateParticipants", (participants) => {
-    participantsList.innerHTML = participants.map(participant => `<li>${participant.name}</li>`).join('');
+    const participantsListElement = document.getElementById("participants-list");
+    participantsListElement.innerHTML = "";
+  
+    participants.forEach((participant) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = participant.name;
+      participantsListElement.appendChild(listItem);
+    });
   });
 
+  socket.on("textUpdate", (data) => {
+    if (data.id !== socket.id) {
+      codeEditor.value = data.text;
+    }
+  });
+
+  codeEditor.addEventListener("input", () => {
+    socket.emit("textUpdate", codeEditor.value);
+  });
   copyButton.addEventListener("click", () => {
-    const codeText = codeEditor.getValue();
+    codeText = codeEditor.value;
     executeCode(codeText);
   });
-  
+
   languageDropdown.addEventListener("change", () => {
     languageId = languageDropdown.value;
+    console.log(languageId);
   });
-  
+
   function executeCode(codeText) {
     getOutputToken(codeText)
       .then((token) => makeSecondRequest(token))
@@ -56,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch((error) => {
         console.error("Error in executeCode:", error);
-        // Handle the error or display an error message to the user
       });
   }
 
@@ -79,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        "X-RapidAPI-Key": "d57e982ca9msh6b2b2958231b232p17e730jsn94a853cf40a5",
+        "X-RapidAPI-Key": "b18550a92dmshaf84c14d5e4596ep1fb318jsnfda795c172cd",
         "X-RapidAPI-Host": "judge0-extra-ce.p.rapidapi.com",
       },
       processData: false,
@@ -119,11 +114,10 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     };
 
-    return $.ajax(newRequestSettings)
-      .catch((error) => {
-        console.error("Error in makeSecondRequest:", error);
-        throw error;
-      });
+    return $.ajax(newRequestSettings).catch((error) => {
+      console.error("Error in makeSecondRequest:", error);
+      throw error;
+    });
   }
 
   // Add a global event listener for unhandled promise rejections
