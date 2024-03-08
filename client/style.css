@@ -30,6 +30,35 @@
   font-size:23px;
 }
 
+.main {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: max(1200px, 100vw);
+  height: 80vh;
+  position: relative;
+
+}
+
+.main .box {
+  height: 50vh;
+  /* width: 100%; */
+  /* opacity: 0.2; */
+  position: absolute;
+  top: 0;
+  background-color: rgb(254, 254, 254);
+  display: block;
+  margin: 30px 0px 0px 75vw;
+}
+
+#message {
+  font-size: 20px;
+}
+
+#sendBtn {
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 10%;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
@@ -304,13 +333,14 @@ float: left;
     align-items: center;
     cursor: pointer;
     transition: box-shadow .5s ease;
+    /* border: 1px solid black; */
     border-radius: 5px;
+    /* background-color: black; */
   }
 
   .item-icon{
     max-width: 100px;
   }
-
 .popup-content {
   background-color: #ffffff;
   padding: 20px;

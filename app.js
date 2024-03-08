@@ -26,6 +26,11 @@ app.get("/:roomId", (req, res) => {
 io.on("connection", (socket) => {
   console.log("A user connected");
 
+  // Listen for Chatting
+  socket.on("user-message", (message) =>{
+    io.emit("message",message);
+  })
+
   socket.on("joinRoom", (roomId, userName) => {
     socket.join(roomId);
 
