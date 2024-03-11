@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Editor Page</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <h1>Editor Room</h1>
   <div class="main">
-    <h1>Editor Room</h1>
-    <div>
-      <h2>Participants</h2>
-      <ul id="participants-list"></ul>
+    <div class="editor">
+      <h2>Editor</h2>
       <label for="languageDropdown">Select Language:</label>
       <select id="languageDropdown">
         <option value="1">C</option>
@@ -21,42 +23,49 @@
       </select>
       <textarea id="code-editor" placeholder="Type your code here..."></textarea>
       <button id="copyButton">Execute Code</button>
-      <div id="outputContainer"></div>
     </div>
 
-    <div class="box">
-      <h1>Chatting</h1>
+    <div class="output">
+      <h2>Output</h2>
+      <div id="outputContainer"></div>
+      <div class="chat-box">
+        <h2>Chatting</h2>
+        <input type="text" id="message" placeholder="Enter Message" />
+        <button id="sendBtn">Send</button>
+        <div id="messages"></div>
+        <script src="/socket.io/socket.io.js"></script>
 
-      <input type="text" id="message" placeholder="Enter Message" />
-      <button id="sendBtn">Send</button>
-      <div id="messages"></div>
+        <script>
+          const socket = io();
+          const sendBtn = document.getElementById("sendBtn");
+          const messageInput = document.getElementById("message");
+          const allmessages = document.getElementById("messages");
 
-      <script src="/socket.io/socket.io.js"></script>
-
-      <script>
-        const socket = io();
-        const sendBtn = document.getElementById("sendBtn");
-        const messageInput = document.getElementById("message");
-        const allmessages = document.getElementById("messages");
-
-        socket.on("message", (message) => {
-          const p = document.createElement('p');
+          socket.on("message", (message) => {
+            const p = document.createElement('p');
             p.innerText = message;
             allmessages.appendChild(p);
-        });
+          });
 
-        sendBtn.addEventListener('click', e => {
-          const message = messageInput.value;
-          console.log(message);
-          socket.emit("user-message", message);
-        })
-      </script>
+          sendBtn.addEventListener('click', e => {
+            const message = messageInput.value;
+            console.log(message);
+            socket.emit("user-message", message);
+          })
+        </script>
+      </div>
     </div>
+
+    <div class="participants">
+      <h2>Participants</h2>
+      <ul id="participants-list"></ul>
+    </div>
+
   </div>
+
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
   <script src="client.js"></script>
-
-
 </body>
+
 </html>
