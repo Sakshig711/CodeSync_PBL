@@ -663,7 +663,8 @@ h1, h2 {
 }
 
 #messages {
-  height: 100px; /* Adjust as needed */
+  width: 600px;
+  height: 200px; /* Adjust as needed */
   overflow-y: auto;
   margin-top: 10px;
   padding: 10px;
@@ -684,3 +685,4 @@ h1, h2 {
 #participants-list li {
   margin-bottom: 5px;
 }
+
