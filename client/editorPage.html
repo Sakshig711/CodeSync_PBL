@@ -10,11 +10,11 @@
 
 <body>
 
-  <h1>Editor Room</h1>
+  <!-- <h1>Editor Room</h1> -->
   <div class="main">
     <div class="editor">
-      <h2>Editor</h2>
-      <label for="languageDropdown">Select Language:</label>
+      <!-- <h2>Editor</h2> -->
+      <label for="languageDropdown" id="lang">Select Language:</label>
       <select id="languageDropdown">
         <option value="1">C</option>
         <option value="2">C++</option>
@@ -26,13 +26,13 @@
     </div>
 
     <div class="output">
-      <h2>Output</h2>
+      <div id="out"><p>Output</p></div>
       <div id="outputContainer"></div>
       <div class="chat-box">
-        <h2>Chatting</h2>
+        <!-- <h2>Chatting</h2>
         <input type="text" id="message" placeholder="Enter Message" />
         <button id="sendBtn">Send</button>
-        <div id="messages"></div>
+        <div id="messages"></div> -->
         <script src="/socket.io/socket.io.js"></script>
 
         <script>
@@ -46,6 +46,7 @@
             p.innerText = message;
             allmessages.appendChild(p);
           });
+
           sendBtn.addEventListener('click', e => {
             const message = messageInput.value;
             console.log(message);
@@ -56,11 +57,15 @@
     </div>
 
     <div class="participants">
-      <h2>Participants</h2>
+      <div id="part"><p>Participants</p></div>
       <ul id="participants-list"></ul>
     </div>
 
+
+
+
   </div>
+
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
   <script src="client.js"></script>

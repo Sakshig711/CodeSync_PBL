@@ -9,6 +9,8 @@
   border-radius: 5px;
   display: block;
   resize: none; 
+  background-color: rgba(0, 0, 0, 0.936);
+  color: white;
 }
 
 #outputContainer {
@@ -16,12 +18,13 @@
   height: 200px;
   padding: 10px;
   position: relative;
-  margin-left: 100vh;
-  margin-bottom: 500px;
+  margin-bottom: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 5px;
   resize: none; 
+  color: white;
+  background-color: #000000;
 }
 
 
@@ -34,16 +37,7 @@
   font-size:23px;
 }
 
-.main {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: max(1200px, 100vw);
-  height: 80vh;
-  position: relative;
-
-}
-
-.main .box {
+.box {
   height: 50vh;
   /* width: 100%; */
   /* opacity: 0.2; */
@@ -51,7 +45,6 @@
   top: 0;
   background-color: rgb(254, 254, 254);
   display: block;
-  margin: 30px 0px 0px 75vw;
 }
 
 #message {
@@ -208,12 +201,6 @@ float: left;
         btn:hover{
           background-color: #e9e8e1;
         }
-
-        body {
-          margin: 0;
-          padding: 0;
-          font-family: Arial, sans-serif;
-      }
       
       .top-right-links {
           position: fixed;
@@ -279,7 +266,7 @@ float: left;
     background-color: #f6f8fa;
   }
 
-  .section{
+  .section, .section-full-width {
     margin: 0 auto;
     padding-left: 10px;
     padding-right: 10px;
@@ -383,148 +370,6 @@ input[type="text"] {
 }
 
 a {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    width: 100%;
-}
-
-h1, h2 {
-    margin-bottom: 10px;
-}
-
-.main {
-    height: 100%; /* Adjust for header height */
-    width: 100%;
-    display: flex;
-}
-
-
-/* CSS for Editor */
-.editor {
-    /* flex: 1; */
-    width: 43%;
-    height: 100%;
-    padding: 10px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.editor h2 {
-    margin-bottom: 10px;
-}
-
-#code-editor {
-    width: 100%;
-    height: 500px;
-    padding: 10px;
-    font-size: 14px;
-    resize: none;
-}
-
-#copyButton {
-    font-size: 16px;
-    padding: 10px 20px;
-    background-color: #1c6bd2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#copyButton:hover {
-    background-color: #139dff;
-}
-
-/* CSS for Output */
-.output {
-    /* flex: 1; */
-    width: 43%;
-    height: 100%;
-    padding: 10px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.output h2 {
-    margin-bottom: 10px;
-}
-
-#outputContainer {
-    width: 100%;
-    height: 300px;
-    padding: 10px;
-    font-size: 14px;
-    resize: none;
-}
-
-/* CSS for Chat */
-.chat-box {
-    flex: 1;
-
-    padding: 10px;
-    background-color: #f2f2f2;
-    /* border: 1px solid #ccc; */
-    /* border-radius: 5px; */
-}
-
-.chat-box h2 {
-    margin-bottom: 10px;
-}
-
-#message {
-    width: calc(100% - 80px); /* Adjust for button width */
-    margin-right: 10px;
-    padding: 10px;
-    font-size: 16px;
-}
-
-#sendBtn {
-    width: 80px; /* Adjust as needed */
-    padding: 10px;
-    font-size: 16px;
-    background-color: #1c6bd2;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#sendBtn:hover {
-    background-color: #139dff;
-}
-
-#messages {
-    height: 100px; /* Adjust as needed */
-    overflow-y: auto;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.participants h2 {
-    margin-bottom: 10px;
-}
-
-#participants-list {
-    list-style: none;
-    padding: 0;
-}
-
-#participants-list li {
-    margin-bottom: 5px;
-}
   margin-bottom: 10px;
   cursor: pointer;
 }
@@ -542,6 +387,10 @@ button:hover {
   background-color: #139dff;
 }
 
+
+  
+
+
 * {
   margin: 0;
   padding: 0;
@@ -553,8 +402,19 @@ html, body {
   width: 100%;
 }
 
-h1, h2 {
-  margin-bottom: 10px;
+p {
+  margin-top: 8px;
+  /* margin: 5px 5px 5px 5px; */
+  /* margin-bottom: 10px; */
+  font-family: Poppins,sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  background-color: #7E22CE;
+  border: 1px solid;
+  border-radius: 7px;
+  display: inline;
+  padding: 7px;
+  color: white;
 }
 
 .main {
@@ -567,12 +427,12 @@ h1, h2 {
 /* CSS for Editor */
 .editor {
   /* flex: 1; */
-  width: 43%;
+  width: 53%;
   height: 100%;
   padding: 10px;
   background-color: #f2f2f2;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-right: 10px;
 }
 
@@ -584,8 +444,14 @@ h1, h2 {
   width: 100%;
   height: 500px;
   padding: 10px;
-  font-size: 14px;
+  font-size: 18px;
   resize: none;
+  border-radius: 10px;
+  margin: 10px 5px 3px 3px;
+  background-color: #000000d4;
+  color: white;
+  font-family: Poppins,sans-serif;
+
 }
 
 #copyButton {
@@ -602,10 +468,30 @@ h1, h2 {
   background-color: #139dff;
 }
 
+#lang{
+  font-size: 22px;
+  padding: 8px ;
+  background-color: #7E22CE;
+  border: 1px solid ;
+  border-radius: 7px;
+  margin: 10px 10px 0px 0px ;
+  color: white;
+  font-family: Poppins,sans-serif;
+
+}
+#languageDropdown{
+  padding: 5px;
+  background-color: #7E22CE;
+  color: white;
+  font-size: 20px;
+  border: 1px solid ;
+  border-radius: 7px;
+}
+
 /* CSS for Output */
 .output {
   /* flex: 1; */
-  width: 43%;
+  width: 30%;
   height: 100%;
   padding: 10px;
   background-color: #f2f2f2;
@@ -622,8 +508,11 @@ h1, h2 {
   width: 100%;
   height: 300px;
   padding: 10px;
-  font-size: 14px;
+  font-size: 18px;
   resize: none;
+}
+#out{
+  margin-top: 8px;
 }
 
 /* CSS for Chat */
@@ -663,8 +552,7 @@ h1, h2 {
 }
 
 #messages {
-  width: 600px;
-  height: 200px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
   overflow-y: auto;
   margin-top: 10px;
   padding: 10px;
@@ -672,7 +560,9 @@ h1, h2 {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-
+#part{
+  margin-top: 20px;
+}
 .participants h2 {
   margin-bottom: 10px;
 }
@@ -683,6 +573,12 @@ h1, h2 {
 }
 
 #participants-list li {
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
+  margin-top: 12px;
+  font-size: 18px;
+  /* background-color: rgba(105, 226, 166, 0.842); */
+  padding: 7px;
+  color: black;
+  border: 1px solid;
+  border-radius: 7px;
 }
-
